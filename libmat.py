@@ -66,3 +66,14 @@ def trocalinha(mat, l1, l2):
 
 
     return mat
+
+def extrai(mat, linha, coluna, qlinha, qcoluna):
+
+	extr = []
+	lst = []
+
+	for l in range(qlinha):
+		for c in range(qcoluna):
+			lst.append(mat[qlinha + l][qcoluna + c])
+		extr.append(lst)
+		lst = []
