@@ -77,3 +77,14 @@ def extrai(mat, linha, coluna, qlinha, qcoluna):
 			lst.append(mat[qlinha + l][qcoluna + c])
 		extr.append(lst)
 		lst = []
+	return extr
+
+def insere(mat, lnh, col, imat):
+
+	for linha in range(len(imat)):
+		for coluna in range(len(imat[0])):
+			mat[lnh + linha][col + coluna] = imat[linha][coluna]
+			
+
+
+	return mat
