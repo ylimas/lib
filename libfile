@@ -1,0 +1,38 @@
+def printtab(tab):
+    for linha in tab:
+        for coluna in linha:
+            print(coluna, end=" ")
+        print()
+
+
+def carregarProdutos(filename):
+    tab = []
+    arq = open(filename, "rt", encoding="utf-8")
+    linhas = arq.readlines()
+    for linha in linhas:
+            if linha.strip() == "-1" or linha.strip() == "":
+                arq.close()
+                return tab
+            
+            else:
+                partes = linha.strip().split(", ")                
+                tab.append(partes)
+      
+    arq.close()
+    return tab
+
+
+#• Função: imprimirProdutos(tabela). 
+#retorna uma string contendo os dados de cada produto pertencente a tabela passada como parâmetro. 
+#Os produtos estão separados por linha.
+def imprimirProdutos(tab):
+
+    resultado = ""
+
+    for linha in tab:
+        for coluna in linha:
+            resultado += coluna + " "
+        resultado += "\n"
+    return resultado
+
+
